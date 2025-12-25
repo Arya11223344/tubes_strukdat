@@ -364,9 +364,13 @@ void menuTambahBuku(ListBuku &LB) {
     getline(cin, b.idBuku);
     cout << "Judul    : ";
     getline(cin, b.judul);
-    cout << "Tahun    : ";
-    cin >> b.tahun;
-    cin.ignore();
+   cout << "Tahun    : ";
+while (!(cin >> b.tahun)) {
+    cout << "Input tahun harus angka: ";
+    cin.clear();      
+    cin.ignore(1000, '\n');
+}
+cin.ignore(); 
 
     b.totalPenulis = 0;
 
