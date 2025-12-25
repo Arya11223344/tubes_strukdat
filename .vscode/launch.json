@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/UAS strukdat",
-      "program": "c:/UAS strukdat/build/Debug/outDebug",
+      "cwd": "c:/folder git/tubes_strukdat",
+      "program": "c:/folder git/tubes_strukdat/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

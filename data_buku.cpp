@@ -1,5 +1,6 @@
 #include "data_buku.h"
 
+// INISIALISASI LIST
 void createListBuku(ListBuku &LB) {
     LB.first = nullptr;
 }
@@ -9,6 +10,7 @@ void createListPenulis(ListPenulis &LP) {
     LP.last = nullptr;
 }
 
+// ALOKASI NODE
 
 adrBuku alokasiBuku(const Buku &b) {
     adrBuku p = new elmBuku;
@@ -33,6 +35,7 @@ adrRelasi alokasiRelasi(adrBuku b) {
     return r;
 }
 
+// OPERASI BUKU (SINGLE LIST)
 
 void insertLastBuku(ListBuku &LB, adrBuku p) {
     if (LB.first == nullptr) {
@@ -76,7 +79,7 @@ adrBuku deleteBukuByID(ListBuku &LB, const string &id) {
     return p;
 }
 
-
+// OPERASI PENULIS (DOUBLE LIST)
 
 void insertLastPenulis(ListPenulis &LP, adrPenulis p) {
     if (LP.first == nullptr) {
@@ -124,6 +127,7 @@ adrPenulis deletePenulisByID(ListPenulis &LP, const string &id) {
     return p;
 }
 
+//  RELASI PENULIS <-> BUKU
 
 bool sudahTerhubung(adrPenulis pen, adrBuku b) {
     adrRelasi r = pen->firstRelasi;
@@ -199,6 +203,8 @@ void hapusRelasiBuku(ListPenulis &LP, adrBuku b) {
         p = p->next;
     }
 }
+
+// DISPLAY FUNCTIONS
 
 void tampilkanSemuaPenulis(ListPenulis LP) {
     cout << "\n=== DATA PENULIS ===\n";
@@ -339,6 +345,7 @@ void tampilkanPenulisPalingAktifDanTidak(ListPenulis LP) {
     cout << "Jumlah Buku: " << tidakAktif->info.jumlahBuku << "\n";
 }
 
+// MENU INPUT / INTERAKSI USER
 
 void menuTambahPenulis(ListPenulis &LP) {
     Penulis p;
@@ -364,13 +371,9 @@ void menuTambahBuku(ListBuku &LB) {
     getline(cin, b.idBuku);
     cout << "Judul    : ";
     getline(cin, b.judul);
-   cout << "Tahun    : ";
-while (!(cin >> b.tahun)) {
-    cout << "Input tahun harus angka: ";
-    cin.clear();      
-    cin.ignore(1000, '\n');
-}
-cin.ignore(); 
+    cout << "Tahun    : ";
+    cin >> b.tahun;
+    cin.ignore();
 
     b.totalPenulis = 0;
 
