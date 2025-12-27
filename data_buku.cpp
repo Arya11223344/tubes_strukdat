@@ -1,6 +1,6 @@
 #include "data_buku.h"
 
-// INISIALISASI LIST
+// INISIALISASI LIST Arya
 void createListBuku(ListBuku &LB) {
     LB.first = nullptr;
 }
@@ -10,7 +10,7 @@ void createListPenulis(ListPenulis &LP) {
     LP.last = nullptr;
 }
 
-// ALOKASI NODE
+// ALOKASI NODE Arya
 
 adrBuku alokasiBuku(const Buku &b) {
     adrBuku p = new elmBuku;
@@ -35,7 +35,7 @@ adrRelasi alokasiRelasi(adrBuku b) {
     return r;
 }
 
-// OPERASI BUKU (SINGLE LIST)
+// OPERASI BUKU (SINGLE LIST) Arya
 
 void insertLastBuku(ListBuku &LB, adrBuku p) {
     if (LB.first == nullptr) {
@@ -79,7 +79,7 @@ adrBuku deleteBukuByID(ListBuku &LB, const string &id) {
     return p;
 }
 
-// OPERASI PENULIS (DOUBLE LIST)
+// OPERASI PENULIS (DOUBLE LIST) ARya
 
 void insertLastPenulis(ListPenulis &LP, adrPenulis p) {
     if (LP.first == nullptr) {
@@ -127,7 +127,7 @@ adrPenulis deletePenulisByID(ListPenulis &LP, const string &id) {
     return p;
 }
 
-//  RELASI PENULIS <-> BUKU
+//  RELASI PENULIS <-> BUKU ARYA
 
 bool sudahTerhubung(adrPenulis pen, adrBuku b) {
     adrRelasi r = pen->firstRelasi;
@@ -204,7 +204,7 @@ void hapusRelasiBuku(ListPenulis &LP, adrBuku b) {
     }
 }
 
-// DISPLAY FUNCTIONS
+// DISPLAY FUNCTIONS ARYA & putra
 
 void tampilkanSemuaPenulis(ListPenulis LP) {
     cout << "\n=== DATA PENULIS ===\n";
